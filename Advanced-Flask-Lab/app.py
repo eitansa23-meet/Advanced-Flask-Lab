@@ -9,23 +9,23 @@ app = Flask(  # Create a flask app
 )
 
 # Variables for tasks
-image_link = "https://scontent.ftlv21-1.fna.fbcdn.net/v/t31.18172-1/1502644_10152506946962507_2442851309927378964_o.png?stp=c49.0.148.148a_dst-png_p148x148&_nc_cat=111&ccb=1-7&_nc_sid=1eb0c7&_nc_ohc=d-R_wjIm2d8AX_NugPv&_nc_ht=scontent.ftlv21-1.fna&oh=00_AT8CSjiG8-biys_qQ9tU-yrxzJSp6HANxsz5c3mFVk-G2Q&oe=62FD0A1B"
+image_link = "https://upload.wikimedia.org/wikipedia/commons/e/ee/Frank_Sinatra_in_1957.jpg"
 
 user_bio = "Middle East Entrepreneurs of Tomorrow. Enabling the next generation of Israeli and Palestinian leaders."
 
-posts = {
-    "https://scontent.ftlv1-1.fna.fbcdn.net/v/t39.30808-6/243021542_10158462822407507_4186737446569136175_n.jpg?stp=cp0_dst-jpg_e15_fr_q65&_nc_cat=101&ccb=1-7&_nc_sid=ed5ff1&_nc_ohc=nHa7N_8RkP0AX92LvUb&_nc_ht=scontent.ftlv1-1.fna&oh=00_AT8kLSHR6V-bvFjpXVVzHXWXviYhBJgkgHANsGlmTojibg&oe=62E08013": "2021 cohort's Y3 Accelerator!",
-    "https://media-exp1.licdn.com/dms/image/C4D1BAQFTbpgMk3KTSg/company-background_10000/0/1614595305396?e=1659178800&v=beta&t=OiSIvxsPJiJkArJIzBCKVF0_-yEta9gv1qLVnViU8bo": "MEET graduation!",
-    "https://pbs.twimg.com/media/FPvsO6xVkAEcrBm?format=jpg&name=900x900": "#Throwback to one of our favorite #MEETsummer events: #BowlingNight!",
-    "https://pbs.twimg.com/media/FI_UkcnVIAAUvWN?format=jpg&name=medium": "2020 cohort in their Y1 summer!"}
 
 
 #####
 
 
-@app.route('/')  # '/' for the default page
+@app.route('/')  # '/' for the default pageima
 def home():
-    return render_template('index.html')
+    return render_template('index.html', image=image_link,user_bio=user_bio, 
+posts = {
+    "https://images.maariv.co.il/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_750/569046": "2021 cohort's Y3 Accelerator!",
+    "https://upload.wikimedia.org/wikipedia/he/thumb/0/08/%D7%9C%D7%99%D7%91%D7%99%D7%A0%D7%92_%D7%93%D7%94_%D7%93%D7%A8%D7%99%D7%9D_-_%D7%A0%D7%95%D7%A0%D7%95.webp/250px-%D7%9C%D7%99%D7%91%D7%99%D7%A0%D7%92_%D7%93%D7%94_%D7%93%D7%A8%D7%99%D7%9D_-_%D7%A0%D7%95%D7%A0%D7%95.webp.png": "MEET graduation!",
+    "https://i.ytimg.com/vi/KEIlou1gTV4/maxresdefault.jpg": "#Throwback to one of our favorite #MEETsummer events: #BowlingNight!",
+    "https://pbs.twimg.com/media/FI_UkcnVIAAUvWN?format=jpg&name=medium": "2020 cohort in their Y1 summer!"})
 
 
 @app.route('/about')  # '/' for the default page
